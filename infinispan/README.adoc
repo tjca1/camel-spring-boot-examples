@@ -1,0 +1,34 @@
+== Spring Boot Example with Infinispan
+
+=== Introduction
+
+This example demonstrates how you can use Camel-Infinispan Starter component. The example is really simple: put a key/value pair in a remote cache and get the same key.
+This example starts an Infinispan server with Infinispan Docker Image, so it can run OOTB.
+
+=== Build and test
+
+You can build this example using:
+
+    $ mvn package
+
+=== Run
+
+Start Infinispan container in a separate terminal:
+
+    $ docker run --rm -e USER=admin -e PASS=password -p 11222:11222 -v $PWD/src/test/resources:/user-config/ quay.io/infinispan/server:13.0.5.Final-1 -c /user-config/infinispan.xml
+
+You can run this example using:
+
+    $ mvn spring-boot:run
+
+And you should see output in the console.
+
+=== Help and contributions
+
+If you hit any problem using Camel or have some feedback, then please
+https://camel.apache.org/community/support/[let us know].
+
+We also love contributors, so
+https://camel.apache.org/community/contributing/[get involved] :-)
+
+The Camel riders!
